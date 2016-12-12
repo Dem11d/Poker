@@ -189,5 +189,4 @@ public class GameServer{
         this.winnerSet = new TreeSet<Player>();
         gameThread.run();
     }
-    
 }
