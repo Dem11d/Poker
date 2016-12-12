@@ -1,0 +1,190 @@
+div.player{
+    margin: 10px;
+    display: inline-block;
+    opacity: 70%;
+}
+div.activeRater{
+    opacity: 100%;
+    border: 2px solid red;
+    border-radius: 3px;
+}
+.rateWindow{
+    opacity: 0%;
+}
+div.visible{
+    opacity: 100%;
+}
+
+
+div[class^="card"]{
+    display: inline-block; 
+    margin: 3px;
+    width: 42px;
+    height: 59px;
+    background-image: url(../images/Cards6.png);
+    background-size: 588px auto;
+}
+div.card-shirt{
+    background-position-y: 177px;
+    background-position-x: 42px;
+}
+div.SPADE{
+    background-position-y: 354px;
+}
+div.HEART{
+    background-position-y: 295px;
+}
+div.DIAMOND{
+    background-position-y: 118px;
+}
+div.CLUB{
+    background-position-y: 59px;
+}
+div.card-2{
+    background-position-x:84px;
+}
+div.card-3{
+    background-position-x:126px;
+}
+div.card-4{
+    background-position-x:168px;
+}
+div.card-5{
+    background-position-x:210px;
+}
+div.card-6{
+    background-position-x:252px;
+}
+div.card-7{
+    background-position-x:294px;
+}
+div.card-8{
+    background-position-x:336px;
+}
+div.card-9{
+    background-position-x:378px;
+}
+div.card-10{
+    background-position-x:420px;
+}
+div.card-Valet{
+    background-position-x:462px;
+}
+div.card-Dame{
+    background-position-x:504px;
+}
+div.card-Roi{
+    background-position-x:546px;
+}
+div.card-As{
+    background-position-x:588px;
+}
+
+div.dealer{
+    position: absolute;
+    left: -25px;
+    width: 22px;
+    height: 22px;
+    background-color: #87570A;
+    font-family: arial;
+    text-transform: uppercase;
+    font-size: 15px;
+    border-radius: 40%;
+    border: 3px solid goldenrod;
+      
+}
+div.dealer span{
+    padding: 3px 5px;
+    display: block;
+    color: white;
+    
+}
+div.blind{
+    position: absolute;
+    left: -30px;
+    width: 26px;
+     height: 22px;
+    background-color: #87570A;
+    font-family: arial;
+    text-transform: uppercase;
+    font-size: 15px;
+     border-radius: 40%;
+      border: 3px solid goldenrod;
+      
+}
+div.blind span{
+    padding: 3px;
+    display: block;
+    color: white;
+    
+}
+div.board{
+    position: relative;
+    margin: 20px;
+    padding: 20px;
+    width: 600px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: green;
+    border: 4px #87570A solid;
+}
+div.spot-0{
+    position:absolute;
+    left:30px;
+    top: -45px;
+}
+div.spot-1{
+    position:absolute;
+    left:180px;
+    top: -100px;
+}
+div.spot-2{
+    position:absolute;
+   right:180px;
+    top: -100px;
+}
+div.spot-3{
+    position:absolute;
+   right: 30px;
+    top: -45px;
+}
+div.spot-4{
+    position:absolute;
+ right: 30px;
+    bottom: -45px;
+}
+div.spot-5{
+    position:absolute;
+   right:180px;
+    bottom: -100px;
+}
+div.spot-6{
+     position:absolute;
+   left:180px;
+    bottom: -100px;
+}
+div.spot-7{
+    position:absolute;
+    left:30px;
+    bottom: -45px;
+}
+div.board-cards{
+    position:absolute;
+    left: 180px;
+    top: 120px;
+}
+span.bank{
+    position:relative;
+    left: 180px;
+    top: 180px;
+}
+/*div.banks{
+    position: relative;
+    left: 180px;
+    top: 180px;
+}*/
+
+
+
+
+
