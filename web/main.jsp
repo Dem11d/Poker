@@ -24,29 +24,34 @@
 //        out.append("<br>");
         %>
         <% request.setCharacterEncoding("utf-8");%>
-        <p> Здравствуйте, ${param["userName"]}!</p>
+        <p> Здравствуйте,<span id="name">${param["userName"]}</span>!</p>
+        <button id="join">Сесть за стол</button>
         <jsp:useBean id="GameSer" class="controller.GameServer" scope="application"></jsp:useBean>
         
         <jsp:useBean id="UPlayer" class="controller.Player" scope="session"></jsp:useBean>
         <%
             UPlayer.setName((String)request.getParameter("userName"));
 //          out.append(((Player)session.getAttribute("UPlayer")).getName());
-          if(!Objects.isNull(GameSer.getPlayers())&&!GameSer.getPlayers().contains(UPlayer))
-          GameSer.addPlayer(UPlayer);
+//          if(!Objects.isNull(GameSer.getPlayers())&&!GameSer.getPlayers().contains(UPlayer))
+//          GameSer.addPlayer(UPlayer);
         %>
         <br>
         <p id="gameStatus"></p>
         <br>
-        <%GameSer.addPlayer(new TestPlayer());%>
-        <span>Количество игроков в игре</span><%=GameSer.countOfPlayers()%>
+        <%//GameSer.addPlayer(new TestPlayer());%>
+        <!--<span>Количество игроков в игре</span><%=GameSer.countOfPlayers()%>-->
         <div class="rateWindow">
             <p>Введите ставку</p>
-            <input id="rate" type="number">
+            <input id="rate" type="number" value="0">
             <button id="acceptRate"> Подтвердить ставку</button>
+            <button id="check">Чек</button>
+            <button id="fold">Сбросить</button>
             <br>
-            <button id="addBot">Добавить компьютерного игрока</button>
-            <button id="restart">Рестарт</button>
-            <button id="bbUp">Увеличить ББ</button>
+            <div id="panel">
+                <button id="addBot"  >Добавить компьютерного игрока</button>
+            <button id="restart" >Рестарт</button>
+            <button id="bbUp" >Увеличить ББ</button>
+            </div>
         </div>
     </body>
 </html>

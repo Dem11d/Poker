@@ -12,6 +12,7 @@ public class GameController {
     
     public Set<Player> winnerSet = new TreeSet<Player>();
     private Iterator<Player> dealerIterator;
+    private Player dealerPlayer=null;
     private List<Player> playersInGame;
     @Deprecated
     private List<Player> allPlayers;
@@ -74,30 +75,41 @@ public class GameController {
     }
     
     public void setDealer(){
-        if (dealerIterator.hasNext()) {
-            Player player = dealerIterator.next();
-            if (player.isLoose) {
-                setDealer();
-
-            } else {
-                gameBoard.setDealerPlayer(player);
-                player.setDealer(true);
-            }
-
-        } else {
-            dealerIterator = allPlayers.iterator();
-            if (dealerIterator.hasNext()) {
-
-                Player player = dealerIterator.next();
-                if (player.isLoose) {
-                    setDealer();
-                } else {
-                    gameBoard.setDealerPlayer(player);
-                    player.setDealer(true);
-                }
-            }
-
+        if(dealerPlayer==null){
+            dealerPlayer = allPlayers.get(0);
+        }else{
+        dealerPlayer = getNextPlayer(allPlayers, dealerPlayer);
         }
+            while(dealerPlayer.isAllIn()||dealerPlayer.isFold()||!dealerPlayer.isPositiveBalance())
+            dealerPlayer = getNextPlayer(allPlayers, dealerPlayer);
+        dealerPlayer.setDealer(true);
+        gameBoard.setDealerPlayer(dealerPlayer);
+        
+//        if (dealerIterator.hasNext()) {
+//        if (false) {
+//            Player player = dealerIterator.next();
+//            if (player.isLoose) {
+//                setDealer();
+//
+//            } else {
+//                gameBoard.setDealerPlayer(player);
+//                player.setDealer(true);
+//            }
+//
+//        } else {
+//            dealerIterator = allPlayers.iterator();
+//            if (dealerIterator.hasNext()) {
+//
+//                Player player = dealerIterator.next();
+//                if (player.isLoose) {
+//                    setDealer();
+//                } else {
+//                    gameBoard.setDealerPlayer(player);
+//                    player.setDealer(true);
+//                }
+//            }
+//
+//        }
     }
     
     private Player getNextPlayer(List list, Player player){

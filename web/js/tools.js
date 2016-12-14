@@ -4,8 +4,18 @@ var ajaxDelay = 400;
 
 $(document).ready(function(){
     //alert('');
+    $("#check").click(function (){
+        sendRate("0")("check");
+    });
+    $("#fold").click(function (){
+        sendRate("-1");
+    });
+    $("#join").click(function (){
+        var name = $("#name").html();
+        joinGame(name);
+    });
     $("#acceptRate").click(function (){
-        sendRate();
+        sendRate($("#rate").val());
     });
     $("#showCards").click(function (){
         showCards();
@@ -55,9 +65,9 @@ function gameStatus() {
         
     });
 }
-function sendRate(){
+function sendRate(rate){
     //alert('');
-    rate = $("#rate").val();
+    
     $.ajax({
         url: "setRate.jsp",
         type: "POST",
@@ -80,6 +90,17 @@ function doAction(action){
         url: "gameUtils.jsp",
         type: "POST",
         data: {action: action},
+        success: function (data, textStatus, jqXHR) {
+            console.log(data);
+        }
+        
+    });
+}
+function joinGame(name){
+    $.ajax({
+        url: "gameUtils.jsp",
+        type: "POST",
+        data: {action: "join", name: name},
         success: function (data, textStatus, jqXHR) {
             console.log(data);
         }

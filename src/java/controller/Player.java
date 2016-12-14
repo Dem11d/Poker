@@ -90,6 +90,7 @@ public class Player implements Comparable<Player> {
     public Player(String name) {
         this.name = name;
         this.isLoose = false;
+        //this.balance=1000;
 
     }
 
@@ -100,6 +101,7 @@ public class Player implements Comparable<Player> {
         int randIndex = (int) (Math.random() * (names.length - 1));
         this.name = names[randIndex];
         this.isLoose = false;
+        this.balance=1000;
     }
 
     public boolean isPositiveBalance() {

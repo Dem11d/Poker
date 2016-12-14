@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    <link href="style/indexStyle.css" rel="stylesheet" type="text/css">
     <body>
         <h1>Добро пожаловать в Покер</h1>
         <form action="main.jsp" method="POST">

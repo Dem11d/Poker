@@ -20,17 +20,16 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%=((GameServer)application.getAttribute("GameSer")).gameStatus()%>
+        <%--<%=((GameServer)application.getAttribute("GameSer")).gameStatus()%>--%>
         <br>
         <p id="step"><%=((GameServer)application.getAttribute("GameSer")).getStep()%></p>
         <br>
-        <%
+        <span id="biggest-rate">Наибольшая ставка <%
             GameServer gameServer = (GameServer)application.getAttribute("GameSer");
             if (!gameServer.gameStatus().equals("WAITING_FOR_PLAYERS")){
             out.append(gameServer.getGameController().getGameBoard().getBiggestRate()+"<br>");
             }
-            
-            %>
+        %></span>
             <div class="board">
             <%
                 //вывод кард стола
@@ -71,8 +70,8 @@
               out.append("Balance: "+player.getBalance()+"<br>");
               out.append("Rate "+player.getRate()+"<br>");
 //              out.append("AccesRate "+player.isRateAccess()+"<br>");
-              out.append("isAllin "+player.isAllIn()+"<br>");
-              out.append("isFold "+player.isFold()+"<br>");
+//              out.append("isAllin "+player.isAllIn()+"<br>");
+//              out.append("isFold "+player.isFold()+"<br>");
               if(player.isDealer()){
                    out.append("<div class='dealer'><span>D<span></div>");
               }

@@ -9,7 +9,7 @@ import controller.Constants;
 
 public class GameServer{
     
-    List<Player> players;
+    List<Player> players=null;
     GameController gameController;
     Thread gameThread;
     volatile GameStatus gameStatus = GameStatus.WAITING_FOR_PLAYERS;
@@ -143,9 +143,9 @@ public class GameServer{
             return false;
         }
         if (Objects.isNull(players)) {
-            players = new ArrayList<>(8);
+            players = new ArrayList<>();
         }
-        if (players.size() == 8) {
+        if (players.size() ==8) {
             return false;
         }
         players.add(player);

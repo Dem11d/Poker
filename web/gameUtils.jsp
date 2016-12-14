@@ -1,3 +1,4 @@
+<%@page import="controller.Player"%>
 <%@page import="controller.TestPlayer"%>
 <%@page import="controller.GameServer"%>
 <%
@@ -20,6 +21,12 @@
                 gameServer.getGameController().getGameBoard().setBigBlibd(bb-15.00);
             }catch(NullPointerException ex){
             }   
+    }else if(action.equals("join")){
+                Player Uplayer =(Player) session.getAttribute("UPlayer");
+               
+                String name =(String) request.getParameter("name");
+                if(gameServer.getPlayers()==null||!gameServer.getPlayers().contains(Uplayer))
+                gameServer.addPlayer(Uplayer);
             }
             
     %>

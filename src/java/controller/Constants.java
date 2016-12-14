@@ -10,9 +10,10 @@ package controller;
  * @author Павлюки
  */
 public class Constants {
-    public static int PLAYER_DELAY = 100;
-    public static int SERVER_DELAY = 80;
+    public static int PLAYER_DELAY = 300;
+    public static int SERVER_DELAY = 200;
     public static int SHOW_CARD_DELAY = 2000;
     
-    public static boolean SHOW_CARDS=true;
+    public static boolean SHOW_CARDS=false;
+    public static int boardSize=7;
 }

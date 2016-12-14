@@ -16,9 +16,11 @@
         <%
             double rate =Double.parseDouble(request.getParameter("rate"));
             Player player = (Player)session.getAttribute("UPlayer");
+            if(player.isRateAccess()){
             player.incrementRate(rate);
             while(player.isRateAccess())
                     player.setRateAccess(false);
+            }
             %>
             
     </body>
