@@ -220,7 +220,7 @@ div.rateWindow{
 #rate{
     width: 200px;
 }
-#fold{
+#fold, #addBot, #bbUp, #restart{
     display: block;
      width: 200px;
     height: 50px;
@@ -236,6 +236,6 @@ div.rateWindow{
     border-radius: 5px;
 }
 #panel{
-    opacity: 0;
+    opacity: 0.5;
 }
 
